@@ -59,6 +59,8 @@ Create the server side rendered page
 
 ## the data
 
+When reading in the GDP, best practice would be to convert it to a long datatype using something like Long.parseLong(GDP)
+
 gdpList.add(new GDP("United States","20513000"));  
 gdpList.add(new GDP("China","13457267"));  
 gdpList.add(new GDP("Japan","5070626"));  
