@@ -20,20 +20,18 @@ The top 100 economies in the world are provided below. The data includes the cou
 Expose the following end-points
 * /names - return using the JSON format all of the countries alphabetized by name
 * /economy - return using the JSON format all of the countries sorted from most to least GDP
-* /gdp/{country name} - return using the JSON format the record for the named country. Must be spelled as in the data however the search should NOT be case sensitive.
 * /country/{id} - return using the JSON format a single country and GDP based off of its id number
 * /country/stats/median - return using the JSON the country and its GDP with the median GDP. For odd number list, return the the country in the middle. For even number list you may return either one of the countries found in the middle.
 
 Create server side rendering pages using Thymeleaf to
-* /economy/greatest/{GDP} - display a table listing all countries in GDP order who have a GDP greater than or equal to the given GDP
 * /economy/table - display a table list all countries sorted from most to least GDP
 
-Add appropriate exception handling routines. Required exceptions to handle are when
+Add appropriate exception handling routines. This is the standard exception handling covered in class. Required exceptions to handle are when
 * a resource is not found
 * the wrong data type is used for a path variable
 * a non-handled endpoint is accessed (a URL not found exception)
 
-Add appropriate logging routines. Required logging include
+Add appropriate logging routines. This is the standard logging covered in class. Required logging include
 * Activating actuator endpoints
 * Tomcat logging routed to a separate log file
 Custom logging under each Get endpoint saying the endpoint has been accessed
@@ -43,7 +41,7 @@ Custom logging under each Get endpoint saying the endpoint has been accessed
   * in the log entry include the date and timestamp of the access of the endpoint
 * You are not to log access to the server side rendering pages.
 
-Note: put the log files under the directory /var/tmp/logs/lambdajx Feel free to create and necessary subdirectories.
+Note: put the log files under the directory /tmp/var/logs/lambdajx Feel free to create and necessary subdirectories.
 
 Finally, deploy the application in a JAR file to Heroku. For the application name use <GitHub username>-gdp
 
@@ -52,7 +50,7 @@ Finally, deploy the application in a JAR file to Heroku. For the application nam
 Expose the following end-point  
 * /total - return the sum of all GDPs using the JSON format with country name being returned as Total
 
-Create the server side rendered page 
+Create the server side html pages 
 * /names/{start letter}/{end letter} - display a table listing all countries in alphabetical order that begin with letters between start and end letter inclusive.
 * /gdp/list/{start gdp}/{end gdp} - display a table listing all countries order by GDP from least to greatest where the country's GDP lies between start gdp and end gdp inclusive.
 
