@@ -11,7 +11,7 @@ A student that completes this project shows that they can
 # Introduction
 
 
-The top 100 economies in the world are provided below. The data includes the country's name its GDP in millions. They are arranged in a way where they can be copy and pasted into a data seed class assuming that the model is crafted correctly. Taking this data, develop an application to help display it.
+The top 100 economies in the world are provided below. The data includes the country's name its Country in millions. They are arranged in a way where they can be copy and pasted into a data seed class assuming that the model is crafted correctly. Taking this data, develop an application to help display it.
 
 
 # Instructions
@@ -19,12 +19,12 @@ The top 100 economies in the world are provided below. The data includes the cou
 
 Expose the following end-points
 * /names - return using the JSON format all of the countries alphabetized by name
-* /economy - return using the JSON format all of the countries sorted from most to least GDP
-* /country/{id} - return using the JSON format a single country and GDP based off of its id number
-* /country/stats/median - return using the JSON the country and its GDP with the median GDP. For odd number list, return the the country in the middle. For even number list you may return either one of the countries found in the middle.
+* /economy - return using the JSON format all of the countries sorted from most to least Country
+* /country/{id} - return using the JSON format a single country and Country based off of its id number
+* /country/stats/median - return using the JSON the country and its Country with the median Country. For odd number list, return the the country in the middle. For even number list you may return either one of the countries found in the middle.
 
 Create server side rendering pages using Thymeleaf to
-* /economy/table - display a table list all countries sorted from most to least GDP
+* /economy/table - display a table list all countries sorted from most to least Country
 
 Add appropriate exception handling routines. This is the standard exception handling covered in class. Required exceptions to handle are when
 * a resource is not found
@@ -48,115 +48,115 @@ Finally, deploy the application in a JAR file to Heroku. For the application nam
 ## Stretch Goals  
 
 Expose the following end-point  
-* /total - return the sum of all GDPs using the JSON format with country name being returned as Total
+* /total - return the sum of all Countrys using the JSON format with country name being returned as Total
 
 Create the server side html pages 
 * /names/{start letter}/{end letter} - display a table listing all countries in alphabetical order that begin with letters between start and end letter inclusive.
-* /gdp/list/{start gdp}/{end gdp} - display a table listing all countries order by GDP from least to greatest where the country's GDP lies between start gdp and end gdp inclusive.
+* /gdp/list/{start gdp}/{end gdp} - display a table listing all countries order by Country from least to greatest where the country's Country lies between start gdp and end gdp inclusive.
 
 
 ## the data
 
-When reading in the GDP, best practice would be to convert it to a long datatype using something like Long.parseLong(GDP)
+When reading in the Country, best practice would be to convert it to a long datatype using something like Long.parseLong(Country)
 
-gdpList.add(new GDP("United States","20513000"));  
-gdpList.add(new GDP("China","13457267"));  
-gdpList.add(new GDP("Japan","5070626"));  
-gdpList.add(new GDP("Germany","4029140"));  
-gdpList.add(new GDP("United Kingdom","2808899"));  
-gdpList.add(new GDP("France","2794696"));  
-gdpList.add(new GDP("India","2689992"));  
-gdpList.add(new GDP("Italy","2086911"));  
-gdpList.add(new GDP("Brazil","1909386"));  
-gdpList.add(new GDP("Canada","1733706"));  
-gdpList.add(new GDP("South Korea","1655608"));  
-gdpList.add(new GDP("Russia","1576488"));  
-gdpList.add(new GDP("Spain","1437047"));  
-gdpList.add(new GDP("Australia","1427767"));  
-gdpList.add(new GDP("Mexico","1199264"));  
-gdpList.add(new GDP("Indonesia","1005268"));  
-gdpList.add(new GDP("Netherlands","909887"));  
-gdpList.add(new GDP("Saudi Arabia","769878"));  
-gdpList.add(new GDP("Turkey","713513"));  
-gdpList.add(new GDP("Switzerland","709118"));  
-gdpList.add(new GDP("Taiwan","602678"));  
-gdpList.add(new GDP("Sweden","554659"));  
-gdpList.add(new GDP("Poland","549478"));  
-gdpList.add(new GDP("Belgium","536055"));  
-gdpList.add(new GDP("Thailand","490120"));  
-gdpList.add(new GDP("Argentina","475429"));  
-gdpList.add(new GDP("Austria","459401"));  
-gdpList.add(new GDP("Norway","441439"));  
-gdpList.add(new GDP("United Arab Emirates","432612"));  
-gdpList.add(new GDP("Iran","430082"));  
-gdpList.add(new GDP("Nigeria","397472"));  
-gdpList.add(new GDP("South Africa","376679"));  
-gdpList.add(new GDP("Ireland","366448"));  
-gdpList.add(new GDP("Israel","365599"));  
-gdpList.add(new GDP("Hong Kong","360315"));  
-gdpList.add(new GDP("Denmark","354683"));  
-gdpList.add(new GDP("Malaysia","347290"));  
-gdpList.add(new GDP("Singapore","346621"));  
-gdpList.add(new GDP("Colombia","336940"));  
-gdpList.add(new GDP("Philippines","331678"));  
-gdpList.add(new GDP("Pakistan","306987"));  
-gdpList.add(new GDP("Chile","299887"));  
-gdpList.add(new GDP("Bangladesh","286275"));  
-gdpList.add(new GDP("Finland","276553"));  
-gdpList.add(new GDP("Egypt","249471"));  
-gdpList.add(new GDP("Czech Republic","244540"));  
-gdpList.add(new GDP("Vietnam","241434"));  
-gdpList.add(new GDP("Romania","239440"));  
-gdpList.add(new GDP("Portugal","237962"));  
-gdpList.add(new GDP("Iraq","230911"));  
-gdpList.add(new GDP("Peru","228944"));  
-gdpList.add(new GDP("Greece","218057"));  
-gdpList.add(new GDP("New Zealand","205997"));  
-gdpList.add(new GDP("Algeria","188342"));  
-gdpList.add(new GDP("Qatar","188295"));  
-gdpList.add(new GDP("Kazakhstan","184209"));  
-gdpList.add(new GDP("Hungary","156393"));  
-gdpList.add(new GDP("Kuwait","144523"));  
-gdpList.add(new GDP("Ukraine","126390"));  
-gdpList.add(new GDP("Morocco","118178"));  
-gdpList.add(new GDP("Angola","114504"));  
-gdpList.add(new GDP("Ecuador","107266"));  
-gdpList.add(new GDP("Slovakia","106940"));  
-gdpList.add(new GDP("Puerto Rico","104557"));  
-gdpList.add(new GDP("Venezuela","96328"));  
-gdpList.add(new GDP("Sri Lanka","92504"));  
-gdpList.add(new GDP("Kenya","89591"));  
-gdpList.add(new GDP("Ethiopia","83836"));  
-gdpList.add(new GDP("Oman","81682"));  
-gdpList.add(new GDP("Dominican Republic","81103"));  
-gdpList.add(new GDP("Guatemala","79109"));  
-gdpList.add(new GDP("Syria","77460"));  
-gdpList.add(new GDP("Myanmar","71543"));  
-gdpList.add(new GDP("Luxembourg","68993"));  
-gdpList.add(new GDP("Panama","66031"));  
-gdpList.add(new GDP("Bulgaria","63651"));  
-gdpList.add(new GDP("Uruguay","60933"));  
-gdpList.add(new GDP("Costa Rica","60816"));  
-gdpList.add(new GDP("Croatia","59971"));  
-gdpList.add(new GDP("Belarus","56934"));  
-gdpList.add(new GDP("Lebanon","56709"));  
-gdpList.add(new GDP("Tanzania","55645"));  
-gdpList.add(new GDP("Slovenia","54969"));  
-gdpList.add(new GDP("Macau","53961"));  
-gdpList.add(new GDP("Lithuania","52468"));  
-gdpList.add(new GDP("Ghana","51815"));  
-gdpList.add(new GDP("Serbia","47564"));  
-gdpList.add(new GDP("Cote d'Ivoire","45875"));  
-gdpList.add(new GDP("Azerbaijan","45592"));  
-gdpList.add(new GDP("Uzbekistan","43303"));  
-gdpList.add(new GDP("Libya","43236"));  
-gdpList.add(new GDP("Democratic Republic of the Congo","42692"));  
-gdpList.add(new GDP("Turkmenistan","42764"));  
-gdpList.add(new GDP("Jordan","41869"));  
-gdpList.add(new GDP("Paraguay","41851"));  
-gdpList.add(new GDP("Bolivia","41833"));  
-gdpList.add(new GDP("Tunisia","41662"));  
-gdpList.add(new GDP("Bahrain","39300"));  
-gdpList.add(new GDP("Cameroon","38445"));  
-gdpList.add(new GDP("Latvia","34286"));  
-gdpList.add(new GDP("Sudan","33249"));  
+countryList.add(new Country("United States","20513000"));  
+countryList.add(new Country("China","13457267"));  
+countryList.add(new Country("Japan","5070626"));  
+countryList.add(new Country("Germany","4029140"));  
+countryList.add(new Country("United Kingdom","2808899"));  
+countryList.add(new Country("France","2794696"));  
+countryList.add(new Country("India","2689992"));  
+countryList.add(new Country("Italy","2086911"));  
+countryList.add(new Country("Brazil","1909386"));  
+countryList.add(new Country("Canada","1733706"));  
+countryList.add(new Country("South Korea","1655608"));  
+countryList.add(new Country("Russia","1576488"));  
+countryList.add(new Country("Spain","1437047"));  
+countryList.add(new Country("Australia","1427767"));  
+countryList.add(new Country("Mexico","1199264"));  
+countryList.add(new Country("Indonesia","1005268"));  
+countryList.add(new Country("Netherlands","909887"));  
+countryList.add(new Country("Saudi Arabia","769878"));  
+countryList.add(new Country("Turkey","713513"));  
+countryList.add(new Country("Switzerland","709118"));  
+countryList.add(new Country("Taiwan","602678"));  
+countryList.add(new Country("Sweden","554659"));  
+countryList.add(new Country("Poland","549478"));  
+countryList.add(new Country("Belgium","536055"));  
+countryList.add(new Country("Thailand","490120"));  
+countryList.add(new Country("Argentina","475429"));  
+countryList.add(new Country("Austria","459401"));  
+countryList.add(new Country("Norway","441439"));  
+countryList.add(new Country("United Arab Emirates","432612"));  
+countryList.add(new Country("Iran","430082"));  
+countryList.add(new Country("Nigeria","397472"));  
+countryList.add(new Country("South Africa","376679"));  
+countryList.add(new Country("Ireland","366448"));  
+countryList.add(new Country("Israel","365599"));  
+countryList.add(new Country("Hong Kong","360315"));  
+countryList.add(new Country("Denmark","354683"));  
+countryList.add(new Country("Malaysia","347290"));  
+countryList.add(new Country("Singapore","346621"));  
+countryList.add(new Country("Colombia","336940"));  
+countryList.add(new Country("Philippines","331678"));  
+countryList.add(new Country("Pakistan","306987"));  
+countryList.add(new Country("Chile","299887"));  
+countryList.add(new Country("Bangladesh","286275"));  
+countryList.add(new Country("Finland","276553"));  
+countryList.add(new Country("Egypt","249471"));  
+countryList.add(new Country("Czech Republic","244540"));  
+countryList.add(new Country("Vietnam","241434"));  
+countryList.add(new Country("Romania","239440"));  
+countryList.add(new Country("Portugal","237962"));  
+countryList.add(new Country("Iraq","230911"));  
+countryList.add(new Country("Peru","228944"));  
+countryList.add(new Country("Greece","218057"));  
+countryList.add(new Country("New Zealand","205997"));  
+countryList.add(new Country("Algeria","188342"));  
+countryList.add(new Country("Qatar","188295"));  
+countryList.add(new Country("Kazakhstan","184209"));  
+countryList.add(new Country("Hungary","156393"));  
+countryList.add(new Country("Kuwait","144523"));  
+countryList.add(new Country("Ukraine","126390"));  
+countryList.add(new Country("Morocco","118178"));  
+countryList.add(new Country("Angola","114504"));  
+countryList.add(new Country("Ecuador","107266"));  
+countryList.add(new Country("Slovakia","106940"));  
+countryList.add(new Country("Puerto Rico","104557"));  
+countryList.add(new Country("Venezuela","96328"));  
+countryList.add(new Country("Sri Lanka","92504"));  
+countryList.add(new Country("Kenya","89591"));  
+countryList.add(new Country("Ethiopia","83836"));  
+countryList.add(new Country("Oman","81682"));  
+countryList.add(new Country("Dominican Republic","81103"));  
+countryList.add(new Country("Guatemala","79109"));  
+countryList.add(new Country("Syria","77460"));  
+countryList.add(new Country("Myanmar","71543"));  
+countryList.add(new Country("Luxembourg","68993"));  
+countryList.add(new Country("Panama","66031"));  
+countryList.add(new Country("Bulgaria","63651"));  
+countryList.add(new Country("Uruguay","60933"));  
+countryList.add(new Country("Costa Rica","60816"));  
+countryList.add(new Country("Croatia","59971"));  
+countryList.add(new Country("Belarus","56934"));  
+countryList.add(new Country("Lebanon","56709"));  
+countryList.add(new Country("Tanzania","55645"));  
+countryList.add(new Country("Slovenia","54969"));  
+countryList.add(new Country("Macau","53961"));  
+countryList.add(new Country("Lithuania","52468"));  
+countryList.add(new Country("Ghana","51815"));  
+countryList.add(new Country("Serbia","47564"));  
+countryList.add(new Country("Cote d'Ivoire","45875"));  
+countryList.add(new Country("Azerbaijan","45592"));  
+countryList.add(new Country("Uzbekistan","43303"));  
+countryList.add(new Country("Libya","43236"));  
+countryList.add(new Country("Democratic Republic of the Congo","42692"));  
+countryList.add(new Country("Turkmenistan","42764"));  
+countryList.add(new Country("Jordan","41869"));  
+countryList.add(new Country("Paraguay","41851"));  
+countryList.add(new Country("Bolivia","41833"));  
+countryList.add(new Country("Tunisia","41662"));  
+countryList.add(new Country("Bahrain","39300"));  
+countryList.add(new Country("Cameroon","38445"));  
+countryList.add(new Country("Latvia","34286"));  
+countryList.add(new Country("Sudan","33249"));  
