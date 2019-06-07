@@ -27,24 +27,35 @@ class CountryController {
     }
 
 
-    // localhost:8080/countries/countries
+    // localhost:8080/countries/names
     val allCountries: ResponseEntity<*>
-        @GetMapping(value = ["/countries"], produces = ["application/json"])
+        @GetMapping(value = ["/names"], produces = ["application/json"])
         get() {
-            com.example.sprintchallengebuildingjavawebapisgdp.controller.CountryController.logger.info { "countries/countries accessed" +
+            com.example.sprintchallengebuildingjavawebapisgdp.controller.CountryController.logger.info { "countries/names accessed" +
                     " on ${SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(Date())}" }
-            val message = MessageDetail("/countries/countries accessed on" +
+            val message = MessageDetail("/countries/names accessed on" +
                     " ${SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(Date())}", 7, false)
             return ResponseEntity(com.example.sprintchallengebuildingjavawebapisgdp.SprintChallengeBuildingJavaWebApisGdpApplication.Companion.ourCountryList.countryList.sortedBy { it.name }, HttpStatus.OK)
         }
 
+    // localhost:8080/countries/economy
+    val allEconomies: ResponseEntity<*>
+        @GetMapping(value = ["/economy"], produces = ["application/json"])
+        get() {
+            com.example.sprintchallengebuildingjavawebapisgdp.controller.CountryController.logger.info { "countries/economy accessed" +
+                    " on ${SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(Date())}" }
+            val message = MessageDetail("/countries/economy accessed on" +
+                    " ${SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(Date())}", 7, false)
+            return ResponseEntity(com.example.sprintchallengebuildingjavawebapisgdp.SprintChallengeBuildingJavaWebApisGdpApplication.Companion.ourCountryList.countryList.sortedBy { -it.gdp }, HttpStatus.OK)
+        }
 
-    // localhost:8080/countries/{id}
+
+    // localhost:8080/countries/country/{id}
     @Throws(ResourceNotFoundException::class)
-    @GetMapping(value = ["/{id}"], produces = ["application/json"])
+    @GetMapping(value = ["/country/{id}"], produces = ["application/json"])
     fun getCountryDetail(@PathVariable id: Long): ResponseEntity<*> {
-       com.example.sprintchallengebuildingjavawebapisgdp.controller.CountryController.logger.info { "countries/$id accessed on ${SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(Date())}" }
-        val message = MessageDetail("/countries/$id accessed on" +
+       com.example.sprintchallengebuildingjavawebapisgdp.controller.CountryController.logger.info { "countries/country/$id accessed on ${SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(Date())}" }
+        val message = MessageDetail("/countries/country/$id accessed on" +
                 " ${SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(Date())}", 2, true)
 
         val rtnCountry = com.example.sprintchallengebuildingjavawebapisgdp.SprintChallengeBuildingJavaWebApisGdpApplication.Companion.ourCountryList.findCountry(CheckCountry.invoke
@@ -61,7 +72,7 @@ class CountryController {
                 " ${SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(Date())}" }
         val mav = ModelAndView()
         mav.viewName = "countries"
-        mav.addObject("countryList", SprintChallengeBuildingJavaWebApisGdpApplication.ourCountryList.countryList.sortedBy { it.gdp })
+        mav.addObject("countryList", SprintChallengeBuildingJavaWebApisGdpApplication.ourCountryList.countryList.sortedBy { -it.gdp })
 
         return mav
     }
